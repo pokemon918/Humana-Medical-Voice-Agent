@@ -41,8 +41,8 @@ This project is a prototype for an AI-powered voice agent designed to handle inc
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/{your_username}/medical-voice-agent.git
-   cd medical-voice-agent
+   git clone https://github.com/pokemon918/Humana-Medical-Voice-Agent
+   cd Humana-Medical-Voice-Agent
    ```
 
 2. Create a virtual environment:
@@ -115,7 +115,6 @@ app/
 ├── core/
 │   ├── config.py           # Configuration settings
 │   ├── logger.py           # Logging setup
-│   └── prompt_templates/   # AI prompt templates
 ├── routers/
 │   └── main.py            # Main API routes
 ├── services/

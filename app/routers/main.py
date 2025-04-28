@@ -2,8 +2,8 @@ import json
 import traceback
 from fastapi import APIRouter, Request, WebSocket
 from fastapi.responses import HTMLResponse
-from langchain_core.messages import AIMessage, HumanMessage
-from langchain_community.chat_message_histories import ChatMessageHistory
+# from langchain_core.messages import AIMessage, HumanMessage
+# from langchain_community.chat_message_histories import ChatMessageHistory
 from twilio.twiml.voice_response import VoiceResponse, Connect
 from elevenlabs import ElevenLabs
 from elevenlabs.conversational_ai.conversation import Conversation

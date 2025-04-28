@@ -10,3 +10,6 @@ python-multipart==0.0.20
 langchain_community==0.3.19
 langchain_core==0.3.41
 langchain_openai==0.3.7
+#warm-transformer
+#huggingface-transformer
+#openai-transformer

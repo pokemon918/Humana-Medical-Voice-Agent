@@ -11,19 +11,6 @@ This project is a prototype for an AI-powered voice agent designed to handle inc
 - Natural language understanding and response generation
 - Seamless voice-to-text and text-to-voice conversion
 
-### Appointment Management
-- New appointment scheduling
-- Appointment rescheduling capability
-- Intelligent conversation flow detection
-- Integration with Oystehr EHR system
-- Automated appointment confirmation via SMS
-
-### Smart Routing
-- Automated detection of conversation intent
-- Intelligent human handoff for complex scenarios
-- Warm transfer capability to human staff
-- Conference call setup for smooth transitions
-
 ## Technologies Used
 
 ### Core Services
@@ -55,13 +42,14 @@ This project is a prototype for an AI-powered voice agent designed to handle inc
    ```bash
    pip install -r requirements.txt
    ```
+4. Update the env file with your own credentials and keys based on .env.example file.
 
-4. Run the Application:
+5. Run the Application:
    ```bash
    python manage.py
    ```
 
-5. Start ngrok tunnel:
+6. Start ngrok tunnel:
    ```bash
    ┌──────────────────────────────────────────────────┐
    │  1. Install ngrok from https://ngrok.com         │
@@ -75,7 +63,7 @@ This project is a prototype for an AI-powered voice agent designed to handle inc
    └──────────────────────────────────────────────────┘
    ```
 
-6. Configure Twilio:
+7. Configure Twilio:
    ```bash
    ┌──────────────────────────────────────────────────┐
    │  Update Twilio Webhook URL:                      │
@@ -85,28 +73,7 @@ This project is a prototype for an AI-powered voice agent designed to handle inc
    └──────────────────────────────────────────────────┘
    ```
 
-7. Call your Twilio phone number and test the application.
-
-## Key Workflows
-
-1. **New Appointment Scheduling**
-   - Voice interaction for gathering patient details
-   - Automatic appointment slot allocation
-   - EHR record creation
-   - SMS confirmation
-
-2. **Appointment Rescheduling**
-   - Existing appointment identification
-   - Patient verification
-   - New slot allocation
-   - EHR record update
-   - Confirmation notification
-
-3. **Human Handoff**
-   - Automatic detection of complex scenarios
-   - Warm transfer to human staff
-   - Conference call setup
-   - Context preservation
+8. Call your Twilio phone number and test the application.
 
 ## Project Structure
 

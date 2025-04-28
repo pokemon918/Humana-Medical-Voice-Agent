@@ -10,13 +10,10 @@ from elevenlabs.conversational_ai.conversation import Conversation
 from starlette.websockets import WebSocketDisconnect
 
 from app.services.twilio_audio_interface import TwilioAudioInterface
-from app.services.appointment import AppointmentService
 from app.core.config import settings
 from app.core.logger import logger
 
 router = APIRouter()
-
-appointment_service = AppointmentService()
 
 def handle_agent_response(conversation_history: ChatMessageHistory, text: str):
     conversation_history.add_ai_message(AIMessage(content=text))

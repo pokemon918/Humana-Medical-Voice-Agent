@@ -2,8 +2,8 @@ import json
 import traceback
 from fastapi import APIRouter, Request, WebSocket
 from fastapi.responses import HTMLResponse
-# from langchain_core.messages import AIMessage, HumanMessage
-# from langchain_community.chat_message_histories import ChatMessageHistory
+from langchain_core.messages import AIMessage, HumanMessage
+from langchain_community.chat_message_histories import ChatMessageHistory
 from twilio.twiml.voice_response import VoiceResponse, Connect
 from elevenlabs import ElevenLabs
 from elevenlabs.conversational_ai.conversation import Conversation
@@ -25,6 +25,24 @@ def handle_agent_response(conversation_history: ChatMessageHistory, text: str):
 def handle_user_transcript(conversation_history: ChatMessageHistory, text: str):
     conversation_history.add_user_message(HumanMessage(content=text))
     logger.info(f"User: {text}")
+
+    async def schedule_appointment():
+     logger.info(f"Scheduling appointment...")
+     appointment = appointment_service.extract_appointment_details(conversation_history)
+     
+     if appointment:
+         try:
+             appointment_details = appointment_service.format_appointment_details(appointment)
+ 
+             await sms_service.send_confirmation(
+                 appointment.phone_number,
+                 appointment_details
+             )
+             logger.info(f"SMS confirmation sent to {appointment.phone_number}")
+         except Exception as e:
+             logger.error(f"Error sending SMS confirmation: {e}")
+     else:
+         logger.info("No appointment details could be extracted from conversation")
 
 @router.post("/twilio/inbound_call")
 async def handle_incoming_call(request: Request):
